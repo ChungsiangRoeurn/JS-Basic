@@ -1,22 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <title>Calculator</title>
+    <title>Mini Library App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-red-100 flex flex-col items-center justify-center">
-    <h1 class="font-bold text-3xl text-center text-blue-700 mt-20">
-      Calculator App
-    </h1>
-    <div class="bg-blue-200 w-30 h-30">
-      <p>1</p>
-      <p>1</p>
-      //deleting for test!
+  <body>
+    <div class="container">
+      <h1>Mini Library App</h1>
+
+      <!-- Add Book -->
+      <div class="add-book">
+        <input type="text" id="title" placeholder="Book Title" />
+        <input type="text" id="author" placeholder="Author" />
+        <button id="addBtn">Add Book</button>
+      </div>
+
+      <!-- Search & Filter -->
+      <div class="controls">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search by title or author"
+        />
+        <select id="sort">
+          <option value="">Sort by</option>
+          <option value="title-asc">Title A-Z</option>
+          <option value="title-desc">Title Z-A</option>
+          <option value="author-asc">Author A-Z</option>
+          <option value="author-desc">Author Z-A</option>
+        </select>
+      </div>
+      <!-- Put this inside .container, above the book list -->
+      <button id="fetchBtn">📚 Load Random Books</button>
+      <div id="loader" class="loader hidden"></div>
+
+      <!-- Book List -->
+      <ul id="bookList"></ul>
     </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
